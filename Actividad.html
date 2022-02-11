@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora interactiva</title>
+    <link rel="stylesheet" href="Actividad.css">
+    <script src="Actividad.js"></script>
+
+</head>
+
+<body>
+    <div id="main_body">
+        <!-- div que actua como recipiente para todos los demas -->
+        <div id="resultado"> <p id="pantalla"> </p> </div>
+        <div class="cuadricula">
+            <!-- div principal que actuará de cuerpo para la Calculadora -->
+            <button onclick="myFunction(this)" id="1">1</button>
+            <button onclick="myFunction(this)" id="2">2</button>
+            <button onclick="myFunction(this)" id="3">3</button>
+            <button onclick="myFunction(this)" id="+">+</button>
+            <button onclick="myFunction(this)" id="4">4</button>
+            <button onclick="myFunction(this)" id="5">5</button>
+            <button onclick="myFunction(this)" id="6">6</button>
+            <button onclick="myFunction(this)" id="-">-</button>
+            <button onclick="myFunction(this)" id="7">7</button>
+            <button onclick="myFunction(this)" id="8">8</button>
+            <button onclick="myFunction(this)" id="9">9</button>
+            <button onclick="myFunction(this)" id="*">*</button>
+            <button onclick="myFunction(this)" id="0">0</button>
+            <button onclick="calculate(), limpiar()" id="=">=</button>
+            <button onclick="myFunction(this)" id="/">/</button>
+            <button onclick="limpiar()" id="C">C</button>
+        </div>
+        <div class="derecho">Historial<br> <p id="salida"> </p></div>
+    </div>
+    </body>
+</body>
+
+</html>

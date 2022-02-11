@@ -1,0 +1,51 @@
+button{
+    font-size: 24px;
+}
+
+#resultado{
+    background-color: greenyellow;
+    display: flexbox;
+    border: black solid;
+    height: 80px;
+    width: 40%;
+}
+
+.cuadricula{
+    position: fixed;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    width: 40%;
+    height: 40%;
+    background-color: gainsboro;
+}
+
+#pantalla{
+    font-size: 28px;
+    font-family: 'Arial';
+    text-align: right;
+    padding-right: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#salida{
+    position: relative;
+    font-size: 32px;
+    left: 2%;
+}
+
+.derecho{
+    font-size: 30px;
+    display: flex;
+    position: absolute;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    border: green solid;
+    width: 50%;
+    height: 465px;
+    left: 40.5%;
+    top: 0px;
+    background-color: rgba(172, 255, 47, 0.603);  
+}
