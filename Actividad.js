@@ -15,6 +15,8 @@ var contenido = document.getElementById("pantalla").innerHTML;
 document.getElementById("salida").innerHTML += contenido +"<br>";
 }
 
-function divisorCalculo(String pantalla){
-
+function divisorCalculo(pantalla){
+  for (var i = 0; i < pantalla.length; i++) {
+    alert(pantalla.charAt(i));
+  }
 }
