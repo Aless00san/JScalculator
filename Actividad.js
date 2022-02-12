@@ -11,19 +11,43 @@ function limpiar() {
   }
 
 //esta funcion se ejecuta cuando pulsamos igual, manda lo que tengamos en pantalla a la salida
-function calculate() {
+function igual() {
 var contenido = document.getElementById("pantalla").innerHTML;
-document.getElementById("salida").innerHTML += contenido +"<br>";
-divisorCalculo(contenido);
+separadorPartes(contenido);
 }
 
-function divisorCalculo(pantalla){
+
+function separadorPartes(pantalla){
+  //Funcion que separa los datos introducidos, en los dos valores a operar
   for (var i = 0; i < pantalla.length; i++) {
-    if(pantalla.charAt(i) == '+'){
-    var numerosIzq = pantalla.substring(0, i-1);
-    var numerosDer = pantalla.substring(i+1, pantalla.length-1)
-    alert(pantalla.charAt(i));
-    console.log(a);
+    if(pantalla.charAt(i) == '+' || pantalla.charAt(i) == '-' || pantalla.charAt(i) == '*' || pantalla.charAt(i) == '/'){
+    var numerosIzq = parseInt(pantalla.substring(0, i));
+    var numerosDer = parseInt(pantalla.substring(i+1, pantalla.length));
+    console.log(numerosIzq +","+ numerosDer); //logea a consola para comprobar que detecta bien los numeros
+    calcular(numerosIzq, numerosDer, i, pantalla);
   }
 }
+}
+
+function calcular(numerosIzq, numerosDer, i, pantalla){
+//funcion que hace los calculos segun lo introducido, hace un log a consola del operador que utiliza y posteriormente muestra el resultado en el historial
+switch(pantalla.charAt(i)){
+case '+':
+  console.log('+');
+  document.getElementById("salida").innerHTML += numerosIzq+" + "+numerosDer+" = "+parseInt(numerosIzq+numerosDer)+"<br>";
+  break;
+case '-':
+  console.log('-');
+  document.getElementById("salida").innerHTML += numerosIzq+" - "+numerosDer+" = "+parseInt(numerosIzq-numerosDer)+"<br>";
+  break;
+case '*':
+  console.log('*');
+  document.getElementById("salida").innerHTML += numerosIzq+" * "+numerosDer+" = "+parseInt(numerosIzq*numerosDer)+"<br>";
+  break;
+case '/':
+  console.log('/');
+  document.getElementById("salida").innerHTML += numerosIzq+" / "+numerosDer+" = "+parseInt(numerosIzq/numerosDer)+"<br>";
+  break;
+}
+
 }
