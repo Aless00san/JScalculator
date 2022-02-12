@@ -21,8 +21,8 @@ function separadorPartes(pantalla){
   //Funcion que separa los datos introducidos, en los dos valores a operar
   for (var i = 0; i < pantalla.length; i++) {
     if(pantalla.charAt(i) == '+' || pantalla.charAt(i) == '-' || pantalla.charAt(i) == '*' || pantalla.charAt(i) == '/'){
-    var numerosIzq = parseInt(pantalla.substring(0, i));
-    var numerosDer = parseInt(pantalla.substring(i+1, pantalla.length));
+    var numerosIzq = parseFloat(pantalla.substring(0, i));
+    var numerosDer = parseFloat(pantalla.substring(i+1, pantalla.length));
     console.log(numerosIzq +","+ numerosDer); //logea a consola para comprobar que detecta bien los numeros
     calcular(numerosIzq, numerosDer, i, pantalla);
   }
@@ -30,24 +30,29 @@ function separadorPartes(pantalla){
 }
 
 function calcular(numerosIzq, numerosDer, i, pantalla){
-//funcion que hace los calculos segun lo introducido, hace un log a consola del operador que utiliza y posteriormente muestra el resultado en el historial
+//funcion que hace los calculos segun lo introducido, actualiza la pantalla con el resultado y muestra el resultado en el historial
 switch(pantalla.charAt(i)){
 case '+':
-  console.log('+');
-  document.getElementById("salida").innerHTML += numerosIzq+" + "+numerosDer+" = "+parseInt(numerosIzq+numerosDer)+"<br>";
+  document.getElementById("pantalla").innerHTML = parseFloat(numerosIzq+numerosDer);
+  document.getElementById("salida").innerHTML += numerosIzq+" + "+numerosDer+" = "+parseFloat(numerosIzq+numerosDer)+"<br>";
   break;
 case '-':
-  console.log('-');
-  document.getElementById("salida").innerHTML += numerosIzq+" - "+numerosDer+" = "+parseInt(numerosIzq-numerosDer)+"<br>";
+  document.getElementById("pantalla").innerHTML = parseFloat(numerosIzq-numerosDer);
+  document.getElementById("salida").innerHTML += numerosIzq+" - "+numerosDer+" = "+parseFloat(numerosIzq-numerosDer)+"<br>";
   break;
 case '*':
-  console.log('*');
-  document.getElementById("salida").innerHTML += numerosIzq+" * "+numerosDer+" = "+parseInt(numerosIzq*numerosDer)+"<br>";
+  document.getElementById("pantalla").innerHTML = parseFloat(numerosIzq*numerosDer);
+  document.getElementById("salida").innerHTML += numerosIzq+" * "+numerosDer+" = "+parseFloat(numerosIzq*numerosDer)+"<br>";
   break;
 case '/':
-  console.log('/');
-  document.getElementById("salida").innerHTML += numerosIzq+" / "+numerosDer+" = "+parseInt(numerosIzq/numerosDer)+"<br>";
+  document.getElementById("pantalla").innerHTML = parseFloat(numerosIzq/numerosDer);
+  document.getElementById("salida").innerHTML += numerosIzq+" / "+numerosDer+" = "+parseFloat(numerosIzq/numerosDer)+"<br>";
   break;
 }
 
+}
+
+//esta funcion vacia el historial cuando la llamamos
+function limpiar_historial(){
+  document.getElementById("salida").innerHTML = "";
 }
