@@ -20,7 +20,10 @@ divisorCalculo(contenido);
 function divisorCalculo(pantalla){
   for (var i = 0; i < pantalla.length; i++) {
     if(pantalla.charAt(i) == '+'){
+    var numerosIzq = pantalla.substring(0, i-1);
+    var numerosDer = pantalla.substring(i+1, pantalla.length-1)
     alert(pantalla.charAt(i));
+    console.log(a);
   }
 }
 }
